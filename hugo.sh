@@ -6,4 +6,4 @@ ASSET_ID=`curl $API_URL/$RELEASE_ID/assets | jq -r '.[] | "\(.id) \(.name)"' | g
 ASSET_URL=`curl $API_URL/assets/$ASSET_ID | jq -r '.browser_download_url'`
 wget $ASSET_URL
 sudo dpkg -i hugo*.deb
-hugo version
+hugo version && rm hugo*.deb
