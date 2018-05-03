@@ -7,3 +7,5 @@ ASSET_URL=`curl $API_URL/assets/$ASSET_ID | jq -r '.browser_download_url'`
 wget $ASSET_URL
 sudo dpkg -i hugo*.deb
 hugo version && rm hugo*.deb
+sudo hugo gen autocomplete
+. /etc/bash_completion
